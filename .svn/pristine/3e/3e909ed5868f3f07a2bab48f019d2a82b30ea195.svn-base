@@ -1,0 +1,41 @@
+#bondsPanel(hidden).panel
+	h1 Outstanding Bonds
+	hr
+	
+	br
+	#tradeModal.modalDialog
+			div
+				.modal-header
+					h2 Filter Bonds
+					hr
+				.modal-content
+					form#tradeFilter
+						label(for="trade_issuer") ISSUER
+						input#trade_issuer.trade-filter(type="text" name="issuer")
+						br
+						label(for="trade_owner") OWNER
+						input#trade_owner.trade-filter(type="text" name="owner")
+						br
+						label(for="trade_ticker") TICKER
+						input#trade_ticker.trade-filter(type="text" name="ticker")
+						br
+						a.filter-button(href="#close" title="Close") Close
+						
+	#openTrades
+		 	
+		<!--a.filter-button(href="#tradeModal") Filter Bonds-->
+		
+		table#tradesTable.tablesorter
+			thead
+				tr 
+					TH: a.sort-selector(sort="issueDate") DATE
+						span.fa.fa-arrow-up.sort-indicator
+					th: a.sort-selector(sort="name") BOND NAME					
+					th: a.sort-selector(sort="par") PAR					
+					th: a.sort-selector(sort="discount") INTEREST RATE
+					th: a.sort-selector(sort="maturity") MATURITY
+					th: a.sort-selector(sort="issuer") ISSUER
+					th: a.sort-selector(sort="owner") LEAD MANAGER
+					th: a.sort-selector(sort="rating") RATING
+					th ACTION
+			tbody#tradesBody

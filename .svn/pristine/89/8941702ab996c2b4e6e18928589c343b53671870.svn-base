@@ -1,0 +1,42 @@
+extends template/layout
+	
+	
+//- --------------- Header -------------- //
+block custom_header
+	script(src='/js/part2.js')
+	script(src='/js/blockchain.js')
+	script(type='text/javascript').
+		$(document).ready(function(){
+			
+		});
+		
+		
+//- --------------- Navigation Bar  -------------- //
+block navpanel
+	include template/nav_part2
+	
+	
+//- --------------- Main Stuff  -------------- //
+block content
+	#contentPanel
+		
+		#blockdate(title="date of last block") loading...
+		
+		
+		// --------------- Create Panel
+		include panel_create
+		
+		
+		// --------------- Bond View
+		include panel_bonds
+
+
+		// --------------- Audit View
+		include panel_audit
+
+		include panel_terms
+
+	
+		
+block footer
+	include template/blockchain

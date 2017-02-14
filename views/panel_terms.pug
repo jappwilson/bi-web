@@ -1,0 +1,47 @@
+#termsPanel(hidden).panel
+	h1 Bond Terms
+	hr
+
+	br
+
+	#bondTerms
+		br
+		p
+			The following are the terms 
+		br
+
+		form(action="/update" method="POST")#updateForm
+		
+			legend
+				input(type='text', name="bondKey", disabled)
+				span.hint BONDKEY
+			legend 
+				input(type="text" name="termissuer" placeholder="Issuer Name" disabled)
+				span.hint ISSUER NAME
+			legend 
+				input(type="text" name="termBondName" placeholder="Enter Bond Name" disabled)
+				span.hint BOND NAME
+			legend 
+				select(name="termPrincipal")
+					option(value="100000") $100,000
+					option(value="1000000") $1,000,000
+					option(value="10000000") $10,000,000
+				span.hint PRINCIPAL AMOUNT
+			legend 
+				input(type="text" name="termCusip" placeholder="IDENTIFIER")
+				span.hint IDENTIFIER
+			legend 
+				input(type="text" name="termRate" placeholder="Rate" disabled)
+				span.hint INTEREST RATE
+			legend
+				input(type='text', name='termMdate', placeholder="Maturity Date" disabled) 
+				span.hint MATURITY DATE
+
+			legend
+				input(type='text', name='termRating', placeholder="Rating") 
+				span.hint RATING
+			
+			legend
+				button(type="button" style="margin:5px;")#update
+					span.fa.fa-check &nbsp;&nbsp;
+					span UPDATE
